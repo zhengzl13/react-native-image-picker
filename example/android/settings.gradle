@@ -1,5 +1,7 @@
-rootProject.name = 'Example'
-include ':react-native-image-picker'
-project(':react-native-image-picker').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-image-picker/android')
+rootProject.name = 'ImagePickerExample'
+apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
+
+// set custom root because we're in a monorepo
+applyNativeModulesSettingsGradle(settings, "../..")
 
 include ':app'
